@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Hide the “default interactive shell is now zsh” warning on macOS
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# Increase bash history size to infinite
+export HISTSIZE=
+export HISTFILESIZE=
+
+# Omit duplicates and commands beginning with a space
+export HISTCONTROL='ignoreboth'
+
+# Node version manager
+export NVM_DIR="$Home/.nvm"
+
+# Go
+export GOPATH=/Users/$USER/go
+export PATH=$GOPATH/bin:$PATH
