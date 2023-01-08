@@ -51,8 +51,11 @@ function generate() {
 
 # Refresh dotfiles repo in Documents/projects/dotfiles
 function refresh_dots() {
+	# Go to root
+	cd ~
+
 	# Copy main dotfiles
-	cp .bash_prompt .bash_profile .bashrc .aliases .exports .functions .gitconfig .gitignore .hushlogin .inputrc .vimrc Documents/projects/dotfiles
+	cp .bash_prompt .bash_profile .bashrc .aliases .exports .functions .gitconfig .gitignore .hushlogin .inputrc .vimrc Brewfile Documents/projects/dotfiles
 
 	# VSCode
 	cp ~/Library/Application\ Support/Code/User/{settings.json,keybindings.json} Documents/projects/dotfiles/vscode

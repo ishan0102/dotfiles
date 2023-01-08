@@ -1,12 +1,13 @@
+# Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# Load the shell dotfiles
 for file in ~/.{bash_prompt,exports,aliases,functions}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
 
-alias ut="cd ~/Documents/UT/Senior"
-
+# Node version manager
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
@@ -25,13 +26,15 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# Enable git branch name completion.
+# curl -L https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ~/.git-completion.bash
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
 
-# Thoughts
-alias thoughts="cd ~/Documents/Programming/Projects/thoughts; hugo-obsidian -input=content -output=assets/indices -index -root=.; hugo server --disableFastRender & open http://localhost:1313"
+# z beats cd most of the time. `brew install z`
+if which brew > /dev/null; then
+    zpath="$(brew --prefix)/etc/profile.d/z.sh"
+    [ -s $zpath ] && source $zpath
+fi;
 
-alias recruiting="cd ~/Documents/Internships/recruiting; ./parse.sh"
-alias unreal="cd ~/Documents/Unreal/landing-page; cd backend && . venv/bin/activate && uvicorn main:app --reload"
-
-
-export HISTSIZE=
-export HISTFILESIZE=
