@@ -1,0 +1,8 @@
+[user]
+	name = Ishan Shah
+	email = ishan0102@utexas.edu
+	signingkey = D13F3585E8A3FCC0
+[commit]
+	gpgsign = true
+[pull]
+	rebase = false
