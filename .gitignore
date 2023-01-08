@@ -1,1 +1,9 @@
-.vscode/
+# Compiled Python files
+*.pyc
+__pycache__/
+
+# Folder view configuration
+.DS_Store
+
+# VSCode
+!.vscode/

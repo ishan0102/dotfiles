@@ -1,0 +1,163 @@
+{
+    "editor.inlineSuggest.enabled": true,
+    "bracketPairColorizer.depreciation-notice": false,
+    "redhat.telemetry.enabled": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.editorAssociations": {
+        "*.pdf": "latex-workshop-pdf-hook"
+    },
+    "cSpell.enableFiletypes": [
+        "!java",
+        "!javascript",
+        "!python"
+    ],
+    "code-runner.runInTerminal": true,
+    "[latex]": {
+        "editor.wordWrap": "on"
+    },
+    "python.formatting.provider": "black",
+    "github.copilot.enable": {
+        "*": false,
+        "yaml": false,
+        "plaintext": true,
+        "markdown": true,
+        "python": true,
+        "latex": true,
+        "javascript": true
+    },
+    "git.confirmSync": false,
+    "cSpell.userWords": [
+        "alterrep",
+        "apos",
+        "clike",
+        "collinearity",
+        "conllu",
+        "Cout",
+        "curr",
+        "Databricks",
+        "dataframe",
+        "Duolingo",
+        "Ishan",
+        "Kaggle",
+        "Karnaugh",
+        "noopener",
+        "noreferrer",
+        "Pictionary",
+        "Pinterest",
+        "Ponnekanti",
+        "println",
+        "prismjs",
+        "pseudocode",
+        "Replit",
+        "Roden",
+        "Rolle's",
+        "semibold",
+        "spikeball",
+        "subinterval",
+        "subintervals",
+        "Telescience",
+        "Testcase",
+        "Testcases"
+    ],
+    "git.enableSmartCommit": true,
+    "explorer.confirmDragAndDrop": false,
+    "python.defaultInterpreterPath": "/usr/bin/python3",
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "rainbow1",
+                "settings": {
+                   "foreground": "#14b8a6"
+                }
+            },
+            {
+                "scope": "keyword.rainbow2",
+                "settings": {
+                   "foreground": "#06b6d4",
+                   "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": "entity.name.function.rainbow3",
+                "settings": {
+                   "foreground": "#0ea5e9",
+                   "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "comment.rainbow4",
+                "settings": {
+                   "foreground": "#3b82f6",
+                   "fontStyle": "underline"
+                }
+            },
+            {
+                "scope": "string.rainbow5",
+                "settings": {
+                   "foreground": "#6366f1"
+                }
+            },
+            {
+                "scope": "variable.parameter.rainbow6",
+                "settings": {
+                   "foreground": "#8b5cf6",
+                   "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": "constant.numeric.rainbow7",
+                "settings": {
+                   "foreground": "#a855f7",
+                   "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "entity.name.type.rainbow8",
+                "settings": {
+                   "foreground": "#d946ef",
+                   "fontStyle": "underline"
+                }
+            },
+            {
+                "scope": "markup.bold.rainbow9",
+                "settings": {
+                   "foreground": "#ec4899"
+                }
+            },
+            {
+                "scope": "invalid.rainbow10",
+                "settings": {
+                   "foreground": "#f43f5e"
+                }
+            }
+        ]
+    },
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "notebook.output.textLineLimit": 50,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "python.languageServer": "Pylance",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "npm.keybindingsChangedWarningShown": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "projectManager.git.baseFolders": [
+        "~/documents"
+    ],
+    "projectManager.sortList": "Name",
+    "projectManager.git.maxDepthRecursion": 0,
+    "sync.gist": "a99754683b33cf5b2f88ad822ef39cc1",
+    "editor.stickyScroll.enabled": true,
+    "excalidraw.theme": "light",
+    "editor.parameterHints.enabled": false,
+    "editor.suggest.showTypeParameters": false,
+    "editor.inlayHints.enabled": "off",
+    "errorLens.enabled": true,
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "workbench.colorTheme": "One Dark+ (Sublime)",
+    "jupyter.widgetScriptSources": [
+        "jsdelivr.com",
+        "unpkg.com"
+    ],
+    "window.zoomLevel": 1,
+}
