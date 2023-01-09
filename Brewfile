@@ -15,6 +15,7 @@ brew "gh"
 brew "hugo"
 brew "jpeg", link: true
 brew "libomp", link: true
+brew "poppler"
 brew "protobuf"
 brew "python@3.8"
 brew "railway"
