@@ -18,7 +18,9 @@ brew "jpeg", link: true
 brew "libomp", link: true
 brew "poppler"
 brew "protobuf"
+brew "python@3.10"
 brew "python@3.8"
+brew "r"
 brew "railway"
 brew "redis"
 brew "rust"
