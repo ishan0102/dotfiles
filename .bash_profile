@@ -31,6 +31,11 @@ unset __conda_setup
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
+# Autocomplete git aliases
+__git_complete gk git_checkout
+__git_complete gb git_branch
+__git_complete gd git_diff
+__git_complete g git
 
 # z beats cd most of the time. `brew install z`
 if which brew > /dev/null; then
