@@ -17,7 +17,7 @@
     },
     "python.formatting.provider": "black",
     "github.copilot.enable": {
-        "*": false,
+        "*": true,
         "yaml": false,
         "plaintext": true,
         "markdown": true,

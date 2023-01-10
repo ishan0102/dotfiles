@@ -12,6 +12,7 @@ brew "tesseract"
 brew "ffmpeg"
 brew "firebase-cli"
 brew "gh"
+brew "glow"
 brew "hugo"
 brew "jpeg", link: true
 brew "libomp", link: true

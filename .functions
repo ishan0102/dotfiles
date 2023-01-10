@@ -64,6 +64,9 @@ function refresh_dots() {
 	# VSCode
 	cp ~/Library/Application\ Support/Code/User/{settings.json,keybindings.json} Documents/projects/dotfiles/vscode
 	cp -R ~/Library/Application\ Support/Code/User/snippets Documents/projects/dotfiles/vscode
+
+	# Go to dotfiles folder
+	cd ~/Documents/projects/dotfiles
 }
 
 # Download any new research papers
