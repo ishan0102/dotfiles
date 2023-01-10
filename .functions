@@ -90,3 +90,19 @@ function catpdf() {
 	cat "${1/.pdf/.txt}"
 	rm "${1/.pdf/.txt}"
 }
+
+# Refresh a Markdown file on a timer
+function rendermd() {
+	# Check if the input file has a .md extension
+	if [[ "$1" != *.md ]]; then
+		echo "Error: input file must have a .md extension."
+		return 1
+	fi
+
+	# Keep calling the glow command to rerender the file until the user terminates the loop
+	while true; do
+		clear && printf '\e[3J'
+		glow "$1"
+		sleep 5
+	done
+}
