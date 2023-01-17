@@ -159,6 +159,6 @@
         "jsdelivr.com",
         "unpkg.com"
     ],
-    "window.zoomLevel": 1,
     "diffEditor.ignoreTrimWhitespace": false,
+    "window.zoomLevel": 1,
 }
