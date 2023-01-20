@@ -1,7 +1,5 @@
 {
     "editor.inlineSuggest.enabled": true,
-    "bracketPairColorizer.depreciation-notice": false,
-    "redhat.telemetry.enabled": true,
     "workbench.iconTheme": "material-icon-theme",
     "workbench.editorAssociations": {
         "*.pdf": "latex-workshop-pdf-hook"
@@ -16,15 +14,6 @@
         "editor.wordWrap": "on"
     },
     "python.formatting.provider": "black",
-    "github.copilot.enable": {
-        "*": true,
-        "yaml": false,
-        "plaintext": true,
-        "markdown": true,
-        "python": true,
-        "latex": true,
-        "javascript": true
-    },
     "git.confirmSync": false,
     "cSpell.userWords": [
         "alterrep",
@@ -61,7 +50,7 @@
     ],
     "git.enableSmartCommit": true,
     "explorer.confirmDragAndDrop": false,
-    "python.defaultInterpreterPath": "/usr/bin/python3",
+    "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
     "security.workspace.trust.untrustedFiles": "open",
     "editor.tokenColorCustomizations": {
         "textMateRules": [
@@ -138,7 +127,6 @@
     "editor.unicodeHighlight.invisibleCharacters": false,
     "python.languageServer": "Pylance",
     "javascript.updateImportsOnFileMove.enabled": "always",
-    "npm.keybindingsChangedWarningShown": true,
     "editor.bracketPairColorization.enabled": true,
     "editor.guides.bracketPairs": "active",
     "projectManager.git.baseFolders": [
@@ -148,17 +136,11 @@
     "projectManager.git.maxDepthRecursion": 0,
     "sync.gist": "a99754683b33cf5b2f88ad822ef39cc1",
     "editor.stickyScroll.enabled": true,
-    "excalidraw.theme": "light",
     "editor.parameterHints.enabled": false,
     "editor.suggest.showTypeParameters": false,
     "editor.inlayHints.enabled": "off",
-    "errorLens.enabled": true,
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "workbench.colorTheme": "One Dark+ (Sublime)",
-    "jupyter.widgetScriptSources": [
-        "jsdelivr.com",
-        "unpkg.com"
-    ],
     "diffEditor.ignoreTrimWhitespace": false,
     "window.zoomLevel": 1,
 }
