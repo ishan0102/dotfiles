@@ -6,3 +6,5 @@
 	gpgsign = true
 [pull]
 	rebase = false
+[core]
+	excludesfile = /Users/ishanshah/.gitignore_global

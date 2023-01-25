@@ -63,7 +63,7 @@ function refresh_dots() {
 	HOMEBREW_NO_AUTO_UPDATE=1 brew bundle dump
 
 	# Copy main dotfiles
-	cp .bash_prompt .bash_profile .bashrc .aliases .exports .functions .gitconfig .gitignore .hushlogin .inputrc .vimrc Brewfile Documents/projects/dotfiles
+	cp .bash_prompt .bash_profile .bashrc .aliases .exports .functions .gitconfig .gitignore_global .hushlogin .inputrc .vimrc Brewfile Documents/projects/dotfiles
 
 	# VSCode
 	cp ~/Library/Application\ Support/Code/User/{settings.json,keybindings.json} Documents/projects/dotfiles/vscode
