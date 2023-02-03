@@ -143,4 +143,7 @@
     "workbench.colorTheme": "One Dark+ (Sublime)",
     "diffEditor.ignoreTrimWhitespace": false,
     "window.zoomLevel": 1,
+    "[python]": {
+        "editor.formatOnType": true
+    },
 }

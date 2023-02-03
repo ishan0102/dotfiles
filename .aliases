@@ -3,6 +3,7 @@
 # Quality of life
 alias ls="ls -haFG --color"
 alias cat="bat"
+alias activate="source venv/bin/activate"
 
 # Easier navigation: .., ..., ...., .....
 alias ..="cd .."

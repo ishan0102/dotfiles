@@ -40,6 +40,12 @@ function mkgit () {
     gh repo create --source=. --"$2" --remote=upstream --push
 }
 
+# Create a new python3 virtual environment
+function mkvenv() {
+	python3 -m venv venv
+	source venv/bin/activate
+}
+
 # Run stable diffusion locally
 function generate() {
 	# Navigate to stable-diffusion repo
@@ -63,7 +69,7 @@ function refresh_dots() {
 	HOMEBREW_NO_AUTO_UPDATE=1 brew bundle dump
 
 	# Copy main dotfiles
-	cp .bash_prompt .bash_profile .bashrc .aliases .exports .functions .gitconfig .gitignore_global .hushlogin .inputrc .vimrc Brewfile Documents/projects/dotfiles
+	cp .bash_prompt .bash_profile .bashrc .aliases .exports .functions .gitconfig .gitignore_global .git-completion.bash .hushlogin .inputrc .vimrc Brewfile Documents/projects/dotfiles
 
 	# VSCode
 	cp ~/Library/Application\ Support/Code/User/{settings.json,keybindings.json} Documents/projects/dotfiles/vscode
@@ -81,6 +87,7 @@ function get_papers() {
 	# Download papers
 	source venv/bin/activate
 	python3 main.py
+	cd papers
 }
 
 # Make a new function that converts pdfs to text when you cat them
