@@ -81,14 +81,25 @@ function refresh_dots() {
 
 # Download any new research papers
 function get_papers() {
-	# Go to paper-dl directory
-	cd ~/Documents/literature/paper-dl
+	# Go to paper-cli directory
+	cd ~/Documents/literature/papers-cli
 
 	# Download papers
 	source venv/bin/activate
-	python3 main.py
+	python3 cli.py download
 	cd papers
 }
+
+# Push any new research papers
+function add_papers() {
+	# Go to papers-cli directory
+	cd ~/Documents/literature/papers-cli
+
+	# Push papers
+	source venv/bin/activate
+	python3 cli.py push $*
+}
+
 
 # Make a new function that converts pdfs to text when you cat them
 function catpdf() {
