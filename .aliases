@@ -34,4 +34,4 @@ alias vscode="code"
 alias python="python3"
 
 # Run ishan.coffee
-alias thoughts="cd ~/Documents/projects/websites/ishan.coffee; hugo-obsidian -input=content -output=assets/indices -index -root=.; open http://localhost:1313; hugo server --disableFastRender;"
+alias thoughts="cd ~/Documents/code/projects/websites/ishan.coffee; hugo-obsidian -input=content -output=assets/indices -index -root=.; open http://localhost:1313; hugo server --disableFastRender;"
