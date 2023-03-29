@@ -86,8 +86,9 @@ function get_papers() {
 
 	# Download papers
 	source venv/bin/activate
+	cd src
 	python3 cli.py download
-	cd papers
+	cd ../papers
 }
 
 # Push any new research papers
@@ -97,6 +98,7 @@ function add_papers() {
 
 	# Push papers
 	source venv/bin/activate
+	cd src
 	python3 cli.py push $*
 }
 

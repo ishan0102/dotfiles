@@ -46,3 +46,6 @@ if which brew > /dev/null; then
     [ -s $zpath ] && source $zpath
 fi;
 
+# GitHub Copilot CLI
+eval "$(github-copilot-cli alias -- "$0")"
+
