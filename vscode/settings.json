@@ -154,5 +154,6 @@
     "workbench.colorTheme": "One Dark+ (Sublime)",
     "workbench.iconTheme": "material-icon-theme",
     "editor.minimap.autohide": true,
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "extensions.ignoreRecommendations": true
 }
