@@ -49,3 +49,6 @@ fi;
 # GitHub Copilot CLI
 eval "$(github-copilot-cli alias -- "$0")"
 
+# atuin
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+eval "$(atuin init bash)"
