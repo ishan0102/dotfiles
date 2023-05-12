@@ -54,3 +54,6 @@ fi;
 
 # GitHub Copilot CLI
 eval "$(github-copilot-cli alias -- "$0")"
+
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
