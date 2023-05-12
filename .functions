@@ -154,5 +154,8 @@ function sshgo() {
     # SSH into the selected account
     echo -e "${GREEN}Connecting to ${descriptions[$index]}...${RESET}"
     ${commands[$index]}
+
+	# Copy computer password into clipboard
+	echo $COMPUTER_PASSWORD | pbcopy
 }
 

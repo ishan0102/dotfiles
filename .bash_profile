@@ -1,5 +1,11 @@
+#!/bin/bash
+
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# atuin
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+eval "$(atuin init bash)"
 
 # Load the shell dotfiles
 for file in ~/.{bash_prompt,exports,aliases,functions,extras}; do
@@ -48,7 +54,3 @@ fi;
 
 # GitHub Copilot CLI
 eval "$(github-copilot-cli alias -- "$0")"
-
-# atuin
-[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
-eval "$(atuin init bash)"
