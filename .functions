@@ -70,11 +70,12 @@ function refresh_dots() {
 	HOMEBREW_NO_AUTO_UPDATE=1 brew bundle dump
 
 	# Copy main dotfiles
-	cp .bash_prompt .bash_profile .bashrc .aliases .exports .functions .gitconfig .gitignore_global .git-completion.bash .hushlogin .inputrc .vimrc Brewfile Documents/code/projects/dotfiles
+	cp .bash_prompt .bash_profile .bashrc .aliases .exports .functions .gitconfig .gitignore_global .git-completion.bash .hushlogin .inputrc .vimrc Brewfile .tmux.conf Documents/code/projects/dotfiles
 
 	# VSCode
 	cp ~/Library/Application\ Support/Code/User/{settings.json,keybindings.json} Documents/code/projects/dotfiles/vscode
 	cp -R ~/Library/Application\ Support/Code/User/snippets Documents/code/projects/dotfiles/vscode
+    cp ~/.vscode/extensions/extensions.json Documents/code/projects/dotfiles/vscode
 
 	# Go to dotfiles folder
 	cd ~/Documents/code/projects/dotfiles
@@ -123,7 +124,7 @@ function sshgo() {
     # Define your SSH accounts as indexed arrays
     local labels=("1" "2") # Labels for each account
     local descriptions=("Compling GPU Cluster" "Digital Ocean") # Descriptions for each account
-    local commands=("ssh irs428@compling.la.utexas.edu" "doctl compute ssh ishan-droplet" "user3@host3") # SSH commands
+    local commands=("irs428@compling.la.utexas.edu" "root@178.128.135.139") # SSH commands
 
     # Print a pretty list of your SSH accounts
     echo -e "${GREEN}${BOLD}SSH Accounts:${RESET}"
@@ -151,11 +152,10 @@ function sshgo() {
         fi
     done
 
+    # Copy computer password into clipboard
+    echo $COMPUTER_PASSWORD | pbcopy
+
     # SSH into the selected account
     echo -e "${GREEN}Connecting to ${descriptions[$index]}...${RESET}"
-    ${commands[$index]}
-
-	# Copy computer password into clipboard
-	echo $COMPUTER_PASSWORD | pbcopy
+    ssh ${commands[$index]}
 }
-

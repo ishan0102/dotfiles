@@ -46,6 +46,9 @@ __git_complete gb git_branch
 __git_complete gd git_diff
 __git_complete g git
 
+# Append to the history file, don't overwrite it
+shopt -s histappend
+
 # z beats cd most of the time. `brew install z`
 if which brew > /dev/null; then
     zpath="$(brew --prefix)/etc/profile.d/z.sh"
