@@ -160,5 +160,6 @@
     "workbench.iconTheme": "material-icon-theme",
     "editor.minimap.autohide": true,
     "extensions.ignoreRecommendations": true,
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "redhat.telemetry.enabled": false
 }
