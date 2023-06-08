@@ -62,73 +62,73 @@ function mkgit() {
 
 # Create a new python3 virtual environment
 function mkvenv() {
-	python3 -m venv venv
-	source venv/bin/activate
-	pip install --upgrade pip
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install --upgrade pip
 }
 
 # Run stable diffusion locally
-function generate() {
-	# Navigate to stable-diffusion repo
-	cd ~/Documents/code/projects/ml/stable-diffusion
-	source venv/bin/activate
+# function generate() {
+#     # Navigate to stable-diffusion repo
+#     cd ~/Documents/code/ml/stable-diffusion
+#     source venv/bin/activate
 
-	python scripts/txt2img.py --prompt "'$*'" --n_samples 1 --n_iter 1 --plms --precision full
+#     python scripts/txt2img.py --prompt "'$*'" --n_samples 1 --n_iter 1 --plms --precision full
 
-	# Open the latest image
-	cd outputs/txt2img-samples
-	open $(ls -p | grep -v / | tail -1)
-}
+#     # Open the latest image
+#     cd outputs/txt2img-samples
+#     open $(ls -p | grep -v / | tail -1)
+# }
 
-# Refresh dotfiles repo in Documents/projects/dotfiles
+# Refresh dotfiles repo
 function refresh_dots() {
-	# Go to root
-	cd ~
+    # Go to root
+    cd ~
 
-	# Refresh Brewfile
-	rm Brewfile
-	HOMEBREW_NO_AUTO_UPDATE=1 brew bundle dump
+    # Refresh Brewfile
+    rm Brewfile
+    HOMEBREW_NO_AUTO_UPDATE=1 brew bundle dump
 
-	# Copy main dotfiles
-	cp .bash_prompt .bash_profile .bashrc .aliases .exports .functions .gitconfig .gitignore_global .git-completion.bash .hushlogin .inputrc .vimrc Brewfile .tmux.conf Documents/code/projects/dotfiles
+    # Copy main dotfiles
+    cp .bash_prompt .bash_profile .bashrc .aliases .exports .functions .gitconfig .gitignore_global .git-completion.bash .hushlogin .inputrc .vimrc Brewfile .tmux.conf Documents/code/dotfiles
 
-	# VSCode
-	cp ~/Library/Application\ Support/Code/User/{settings.json,keybindings.json} Documents/code/projects/dotfiles/vscode
-	cp -R ~/Library/Application\ Support/Code/User/snippets Documents/code/projects/dotfiles/vscode
-    cp ~/.vscode/extensions/extensions.json Documents/code/projects/dotfiles/vscode
+    # VSCode
+    cp ~/Library/Application\ Support/Code/User/{settings.json,keybindings.json} Documents/code/dotfiles/vscode
+    cp -R ~/Library/Application\ Support/Code/User/snippets Documents/code/dotfiles/vscode
+    cp ~/.vscode/extensions/extensions.json Documents/code/dotfiles/vscode
 
-	# Go to dotfiles folder
-	cd ~/Documents/code/projects/dotfiles
+    # Go to dotfiles folder
+    cd ~/Documents/code/dotfiles
 }
 
 # Make a new function that converts pdfs to text when you cat them
 function catpdf() {
-	# Check if the first argument is a PDF file
-	if ! [[ "$1" == *.pdf ]]; then
- 		echo "Error: you must pass in a PDF file."
-	fi
+    # Check if the first argument is a PDF file
+    if ! [[ "$1" == *.pdf ]]; then
+        echo "Error: you must pass in a PDF file."
+    fi
 
-	pdftotext "$1"
-	cat "${1/.pdf/.txt}"
-	rm "${1/.pdf/.txt}"
+    pdftotext "$1"
+    cat "${1/.pdf/.txt}"
+    rm "${1/.pdf/.txt}"
 }
 
 # Refresh a Markdown file on a timer
 function rendermd() {
-	# Check if the input file has a .md extension
-	if [[ "$1" != *.md ]]; then
-		echo "Error: input file must have a .md extension."
-		return 1
-	fi
+    # Check if the input file has a .md extension
+    if [[ "$1" != *.md ]]; then
+        echo "Error: input file must have a .md extension."
+        return 1
+    fi
 
-	# Keep calling the glow command to rerender the file until user is done
-	while true; do
-		clear && printf '\e[3J' # clear scrollback buffer
-		sed 's/->/\&rarr;/g' "$1" > _rendering.md # add fancy arrows for rendering
-		glow "_rendering.md"
-		sleep 5
-	done
-	rm _rendering.md
+    # Keep calling the glow command to rerender the file until user is done
+    while true; do
+        clear && printf '\e[3J' # clear scrollback buffer
+        sed 's/->/\&rarr;/g' "$1" > _rendering.md # add fancy arrows for rendering
+        glow "_rendering.md"
+        sleep 5
+    done
+    rm _rendering.md
 }
 
 # SSHGo - SSH into accounts without memorizing hostnames
