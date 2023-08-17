@@ -18,5 +18,9 @@ export GOPATH=/Users/$USER/go
 export PATH=$GOPATH/bin:$PATH
 
 # Fix sed errors (https://stackoverflow.com/questions/19242275/re-error-illegal-byte-sequence-on-mac-os-x/19770395#19770395)
-export LC_CTYPE=C
-export LANG=C
+# export LC_CTYPE=C
+# export LANG=C
+
+# Fix xcode error
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
