@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# cd
+function cd() {
+	builtin cd "$@" && ls
+}
+
 # Define color and formatting codes
 bold=$(tput bold)
 underline=$(tput smul)
