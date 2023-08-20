@@ -1,0 +1,48 @@
+#!/bin/bash
+
+# cd
+function cd() {
+	builtin cd "$@" && ls
+}
+
+# Define color and formatting codes
+bold=$(tput bold)
+underline=$(tput smul)
+reset=$(tput sgr0)
+red=$(tput setaf 1)
+green=$(tput setaf 2)
+blue=$(tput setaf 4)
+
+# Create a new python3 virtual environment
+function mkvenv() {
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install --upgrade pip
+}
+
+# Make a new function that converts pdfs to text when you cat them
+function catpdf() {
+    # Check if the first argument is a PDF file
+    if ! [[ "$1" == *.pdf ]]; then
+        echo "Error: you must pass in a PDF file."
+    fi
+
+    pdftotext "$1"
+    cat "${1/.pdf/.txt}"
+    rm "${1/.pdf/.txt}"
+}
+
+# From swyx: functions to measure time per bash command
+preexec() {
+  timer=$(gdate +%s.%N)
+}
+
+precmd() {
+  if [ -n "$timer" ]; then
+    now=$(gdate +%s.%N)
+    elapsed=$(echo "$now - $timer" | bc)
+    timer_show=$(printf "%.2f" $elapsed)
+    echo "Execution time: ${timer_show}s"
+    unset timer
+  fi
+}

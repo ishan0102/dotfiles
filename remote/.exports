@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Increase bash history size to infinite
+export HISTSIZE=
+export HISTFILESIZE=
+
+# Omit duplicates and commands beginning with a space
+export HISTCONTROL='ignoreboth'
