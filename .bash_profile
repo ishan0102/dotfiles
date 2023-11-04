@@ -8,9 +8,19 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(atuin init bash)"
 
 # Load the shell dotfiles
-for file in ~/.{bash_prompt,exports,aliases,functions,extras}; do
-	[ -r "$file" ] && [ -f "$file" ] && source "$file"
+for file in ~/.{bash_prompt,exports,aliases,extras}; do
+    [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
+
+# Now handle the .functions directory separately
+if [ -d ~/.functions ]; then
+    for func in ~/.functions/*; do
+        if [ -r "$func" ] && [ -f "$func" ]; then
+            source "$func"
+        fi
+    done
+fi
+
 unset file
 
 # Disable mouse acceleration
@@ -60,3 +70,4 @@ eval "$(github-copilot-cli alias -- "$0")"
 
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
+bind 'set bell-style none'

@@ -143,7 +143,6 @@
     "editor.suggest.showTypeParameters": false,
     "editor.inlayHints.enabled": "off",
     "terminal.integrated.enableMultiLinePasteWarning": false,
-    "diffEditor.ignoreTrimWhitespace": false,
     "[python]": {
         "editor.formatOnType": true,
         "editor.defaultFormatter": "ms-python.black-formatter"
@@ -160,6 +159,6 @@
     "workbench.iconTheme": "material-icon-theme",
     "editor.minimap.autohide": true,
     "extensions.ignoreRecommendations": true,
-    "window.zoomLevel": 1,
-    "redhat.telemetry.enabled": false
+    "redhat.telemetry.enabled": false,
+    "window.zoomLevel": 1
 }
