@@ -36,14 +36,15 @@ initialize_git() {
 
     print_step "Initializing the git repository..."
     git init -b main
-    git add .
-    git commit -m "Initial commit"
-    print_success "Git repository initialized successfully."
     
     # Setup Python project if applicable
     if [[ "$is_python_project" == "yes" ]]; then
         setup_python_project
     fi
+
+    git add .
+    git commit -m "Initial commit"
+    print_success "Git repository initialized successfully."
 }
 
 # Function to setup a Python project
@@ -154,4 +155,7 @@ mkgit() {
 
     # Prepare for linking local repo to GitHub
     create_github_repo
+
+    # Open VS Code
+    code .
 }
