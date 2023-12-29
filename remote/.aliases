@@ -2,6 +2,7 @@
 
 # Quality of life
 alias ls="ls -1 -haFG --color"
+alias cat="bat"
 alias activate="source venv/bin/activate"
 
 # Easier navigation: .., ..., ...., .....
@@ -25,4 +26,4 @@ alias gll="git pull"
 
 # Code running
 alias python="python3"
-
+alias python3="python3.10"
