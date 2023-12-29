@@ -11,9 +11,9 @@ function sshgo() {
     local RESET="\033[0m"
 
     # Define your SSH accounts as indexed arrays
-    local labels=("1" "2" "3") # Labels for each account
-    local descriptions=("Michael's GPU" "Compling GPU Cluster" "Digital Ocean") # Descriptions for each account
-    local commands=("ishan0102@172.92.164.155" "irs428@compling.la.utexas.edu" "root@178.128.135.139") # SSH commands
+    local labels=("1" "2") # Labels for each account
+    local descriptions=("devbox" "Digital Ocean") # Descriptions for each account
+    local commands=("$DEVBOX_IP" "root@178.128.135.139") # SSH commands
 
     # Print a pretty list of your SSH accounts
     echo -e "${GREEN}${BOLD}SSH Accounts:${RESET}"

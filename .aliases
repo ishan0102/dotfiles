@@ -4,6 +4,7 @@
 alias ls="ls -1 -haFG --color"
 alias cat="bat"
 alias activate="source venv/bin/activate"
+alias nrd="npm run dev"
 
 # Easier navigation: .., ..., ...., .....
 alias ..="cd .."
