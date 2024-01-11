@@ -46,5 +46,5 @@ function sshgo() {
 
     # SSH into the selected account
     echo -e "${GREEN}Connecting to ${descriptions[$index]}...${RESET}"
-    ssh ${commands[$index]}
+    mosh ${commands[$index]}
 }
