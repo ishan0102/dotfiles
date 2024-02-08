@@ -24,3 +24,6 @@ export PATH=$GOPATH/bin:$PATH
 # Fix xcode error
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+# Python breakpoints
+export PYTHONBREAKPOINT='ipdb.set_trace'

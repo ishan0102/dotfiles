@@ -11,9 +11,9 @@ function sshgo() {
     local RESET="\033[0m"
 
     # Define your SSH accounts as indexed arrays
-    local labels=("1") # Labels for each account
-    local descriptions=("devbox") # Descriptions for each account
-    local commands=("$DEVBOX_IP") # SSH commands
+    local labels=("1" "2") # Labels for each account
+    local descriptions=("devbox" "happenstance") # Descriptions for each account
+    local commands=("mosh $DEVBOX_IP" "ssh $HAPPENSTANCE_IP") # SSH commands
 
     # Print a pretty list of your SSH accounts
     echo -e "${GREEN}${BOLD}SSH Accounts:${RESET}"
@@ -46,5 +46,5 @@ function sshgo() {
 
     # SSH into the selected account
     echo -e "${GREEN}Connecting to ${descriptions[$index]}...${RESET}"
-    mosh ${commands[$index]}
+    ${commands[$index]}
 }
