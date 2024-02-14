@@ -25,5 +25,8 @@ export PATH=$GOPATH/bin:$PATH
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+# Fix GPG error
+export GPG_TTY=$(tty)
+
 # Python breakpoints
 export PYTHONBREAKPOINT='ipdb.set_trace'
