@@ -3,6 +3,7 @@
 # Quality of life
 alias ls="ls -1 -haFG --color"
 alias fc="expr \$(ls -1 | wc -l) - 2"
+alias fcloop="while true; do echo -ne '\r$(fc)'; done"
 alias cat="bat"
 alias activate="source venv/bin/activate"
 alias nrd="npm run dev"
