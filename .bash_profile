@@ -71,3 +71,6 @@ eval "$(github-copilot-cli alias -- "$0")"
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 bind 'set bell-style none'
+
+# Created by `pipx` on 2024-03-16 22:56:40
+export PATH="$PATH:/Users/ishanshah/.local/bin"
