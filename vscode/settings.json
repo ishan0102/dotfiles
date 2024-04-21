@@ -157,10 +157,11 @@
     },
     "workbench.colorTheme": "One Dark+ (Sublime)",
     "workbench.iconTheme": "material-icon-theme",
-    "editor.minimap.autohide": true,
     "extensions.ignoreRecommendations": true,
     "redhat.telemetry.enabled": false,
     "git.openRepositoryInParentFolders": "always",
     "window.zoomLevel": 1,
-    "terminal.integrated.fontFamily": "monospace"
+    "terminal.integrated.fontFamily": "monospace",
+    "editor.minimap.enabled": false,
+    "security.promptForLocalFileProtocolHandling": false
 }

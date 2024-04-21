@@ -3,10 +3,6 @@
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# atuin
-[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
-eval "$(atuin init bash)"
-
 # Load the shell dotfiles
 for file in ~/.{bash_prompt,exports,aliases,extras}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
