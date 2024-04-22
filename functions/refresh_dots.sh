@@ -10,7 +10,7 @@ function refresh_dots() {
     HOMEBREW_NO_AUTO_UPDATE=1 brew bundle dump
 
     # Copy main dotfiles
-    cp .bash_prompt .bash_profile .bashrc .aliases .exports .gitconfig .gitignore_global .git-completion.bash .hushlogin .inputrc .vimrc Brewfile .tmux.conf Documents/code/dotfiles
+    cp .bash_prompt .bash_profile .bashrc .aliases .exports .gitconfig .gitignore_global .git-completion.bash .bash-preexec.sh .hushlogin .inputrc .vimrc Brewfile .tmux.conf Documents/code/dotfiles
 
     # Copy the .functions directory
     cp -R .functions/ Documents/code/dotfiles/functions

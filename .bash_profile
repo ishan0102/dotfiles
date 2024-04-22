@@ -8,6 +8,13 @@ for file in ~/.{bash_prompt,exports,aliases,extras}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 
+# Set up preexec
+source ~/.bash-preexec.sh
+
+# atuin
+# [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+# eval "$(atuin init bash)"
+
 # Now handle the .functions directory separately
 if [ -d ~/.functions ]; then
     for func in ~/.functions/*; do
@@ -64,8 +71,8 @@ fi;
 # GitHub Copilot CLI
 eval "$(github-copilot-cli alias -- "$0")"
 
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
+# bind '"\e[A": history-search-backward'
+# bind '"\e[B": history-search-forward'
 bind 'set bell-style none'
 
 # Created by `pipx` on 2024-03-16 22:56:40
