@@ -1,167 +1,160 @@
 {
-    "editor.inlineSuggest.enabled": true,
-    "workbench.editorAssociations": {
-        "*.pdf": "latex-workshop-pdf-hook"
-    },
-    "cSpell.enableFiletypes": [
-        "!java",
-        "!javascript",
-        "!plaintext",
-        "!python"
-    ],
-    "code-runner.runInTerminal": true,
-    "[latex]": {
-        "editor.wordWrap": "on"
-    },
-    "python.formatting.provider": "black",
-    "git.confirmSync": false,
-    "cSpell.userWords": [
-        "alterrep",
-        "apheleia",
-        "apos",
-        "clike",
-        "collinearity",
-        "conllu",
-        "Cout",
-        "curr",
-        "Databricks",
-        "dataframe",
-        "Duolingo",
-        "Ishan",
-        "Kaggle",
-        "Karnaugh",
-        "mnli",
-        "noopener",
-        "noreferrer",
-        "Pictionary",
-        "Pinterest",
-        "Ponnekanti",
-        "println",
-        "prismjs",
-        "pseudocode",
-        "Replit",
-        "Roden",
-        "Rolle's",
-        "rsrch",
-        "semibold",
-        "spikeball",
-        "subinterval",
-        "subintervals",
-        "Telescience",
-        "Testcase",
-        "Testcases"
-    ],
-    "git.enableSmartCommit": true,
-    "explorer.confirmDragAndDrop": false,
-    "python.defaultInterpreterPath": "/opt/homebrew/Cellar/python@3.10/3.10.13/Frameworks/Python.framework/Versions/3.10/bin/python3.10",
-    "security.workspace.trust.untrustedFiles": "open",
-    "editor.tokenColorCustomizations": {
-        "textMateRules": [
-            {
-                "scope": "rainbow1",
-                "settings": {
-                    "foreground": "#14b8a6"
-                }
-            },
-            {
-                "scope": "keyword.rainbow2",
-                "settings": {
-                    "foreground": "#06b6d4",
-                    "fontStyle": "bold"
-                }
-            },
-            {
-                "scope": "entity.name.function.rainbow3",
-                "settings": {
-                    "foreground": "#0ea5e9",
-                    "fontStyle": "italic"
-                }
-            },
-            {
-                "scope": "comment.rainbow4",
-                "settings": {
-                    "foreground": "#3b82f6",
-                    "fontStyle": "underline"
-                }
-            },
-            {
-                "scope": "string.rainbow5",
-                "settings": {
-                    "foreground": "#6366f1"
-                }
-            },
-            {
-                "scope": "variable.parameter.rainbow6",
-                "settings": {
-                    "foreground": "#8b5cf6",
-                    "fontStyle": "bold"
-                }
-            },
-            {
-                "scope": "constant.numeric.rainbow7",
-                "settings": {
-                    "foreground": "#a855f7",
-                    "fontStyle": "italic"
-                }
-            },
-            {
-                "scope": "entity.name.type.rainbow8",
-                "settings": {
-                    "foreground": "#d946ef",
-                    "fontStyle": "underline"
-                }
-            },
-            {
-                "scope": "markup.bold.rainbow9",
-                "settings": {
-                    "foreground": "#ec4899"
-                }
-            },
-            {
-                "scope": "invalid.rainbow10",
-                "settings": {
-                    "foreground": "#f43f5e"
-                }
-            }
-        ]
-    },
-    "editor.unicodeHighlight.ambiguousCharacters": false,
-    "notebook.output.textLineLimit": 50,
-    "editor.unicodeHighlight.invisibleCharacters": false,
-    "python.languageServer": "Pylance",
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "editor.bracketPairColorization.enabled": true,
-    "editor.guides.bracketPairs": "active",
-    "projectManager.git.baseFolders": [
-        "~/documents"
-    ],
-    "projectManager.sortList": "Name",
-    "projectManager.git.maxDepthRecursion": 0,
-    "sync.gist": "a99754683b33cf5b2f88ad822ef39cc1",
-    "editor.stickyScroll.enabled": true,
-    "editor.parameterHints.enabled": false,
-    "editor.suggest.showTypeParameters": false,
-    "editor.inlayHints.enabled": "off",
-    "terminal.integrated.enableMultiLinePasteWarning": false,
-    "[python]": {
-        "editor.formatOnType": true,
-        "editor.defaultFormatter": "ms-python.black-formatter"
-    },
-    "github.copilot.enable": {
-        "*": true,
-        "plaintext": true,
-        "markdown": true,
-        "scminput": false,
-        "yaml": true,
-        "latex": true
-    },
-    "workbench.colorTheme": "One Dark+ (Sublime)",
-    "workbench.iconTheme": "material-icon-theme",
-    "extensions.ignoreRecommendations": true,
-    "redhat.telemetry.enabled": false,
-    "git.openRepositoryInParentFolders": "always",
-    "window.zoomLevel": 1,
-    "terminal.integrated.fontFamily": "monospace",
-    "editor.minimap.enabled": false,
-    "security.promptForLocalFileProtocolHandling": false
+  "editor.inlineSuggest.enabled": true,
+  "workbench.editorAssociations": {
+    "*.pdf": "latex-workshop-pdf-hook"
+  },
+  "cSpell.enableFiletypes": ["!java", "!javascript", "!plaintext", "!python"],
+  "code-runner.runInTerminal": true,
+  "[latex]": {
+    "editor.wordWrap": "on"
+  },
+  "python.formatting.provider": "black",
+  "git.confirmSync": false,
+  "cSpell.userWords": [
+    "alterrep",
+    "apheleia",
+    "apos",
+    "clike",
+    "collinearity",
+    "conllu",
+    "Cout",
+    "curr",
+    "Databricks",
+    "dataframe",
+    "Duolingo",
+    "Ishan",
+    "Kaggle",
+    "Karnaugh",
+    "mnli",
+    "noopener",
+    "noreferrer",
+    "Pictionary",
+    "Pinterest",
+    "Ponnekanti",
+    "println",
+    "prismjs",
+    "pseudocode",
+    "Replit",
+    "Roden",
+    "Rolle's",
+    "rsrch",
+    "semibold",
+    "spikeball",
+    "subinterval",
+    "subintervals",
+    "Telescience",
+    "Testcase",
+    "Testcases"
+  ],
+  "git.enableSmartCommit": true,
+  "explorer.confirmDragAndDrop": false,
+  "python.defaultInterpreterPath": "/opt/homebrew/Cellar/python@3.10/3.10.13/Frameworks/Python.framework/Versions/3.10/bin/python3.10",
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "rainbow1",
+        "settings": {
+          "foreground": "#14b8a6"
+        }
+      },
+      {
+        "scope": "keyword.rainbow2",
+        "settings": {
+          "foreground": "#06b6d4",
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "entity.name.function.rainbow3",
+        "settings": {
+          "foreground": "#0ea5e9",
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": "comment.rainbow4",
+        "settings": {
+          "foreground": "#3b82f6",
+          "fontStyle": "underline"
+        }
+      },
+      {
+        "scope": "string.rainbow5",
+        "settings": {
+          "foreground": "#6366f1"
+        }
+      },
+      {
+        "scope": "variable.parameter.rainbow6",
+        "settings": {
+          "foreground": "#8b5cf6",
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "constant.numeric.rainbow7",
+        "settings": {
+          "foreground": "#a855f7",
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": "entity.name.type.rainbow8",
+        "settings": {
+          "foreground": "#d946ef",
+          "fontStyle": "underline"
+        }
+      },
+      {
+        "scope": "markup.bold.rainbow9",
+        "settings": {
+          "foreground": "#ec4899"
+        }
+      },
+      {
+        "scope": "invalid.rainbow10",
+        "settings": {
+          "foreground": "#f43f5e"
+        }
+      }
+    ]
+  },
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "notebook.output.textLineLimit": 50,
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "python.languageServer": "Pylance",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "projectManager.git.baseFolders": ["~/documents"],
+  "projectManager.sortList": "Name",
+  "projectManager.git.maxDepthRecursion": 0,
+  "sync.gist": "a99754683b33cf5b2f88ad822ef39cc1",
+  "editor.stickyScroll.enabled": true,
+  "editor.parameterHints.enabled": false,
+  "editor.suggest.showTypeParameters": false,
+  "editor.inlayHints.enabled": "off",
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "[python]": {
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": true,
+    "scminput": false,
+    "yaml": true,
+    "latex": true
+  },
+  "workbench.colorTheme": "One Dark+ (Sublime)",
+  "workbench.iconTheme": "material-icon-theme",
+  "extensions.ignoreRecommendations": true,
+  "redhat.telemetry.enabled": false,
+  "git.openRepositoryInParentFolders": "always",
+  "terminal.integrated.fontFamily": "monospace",
+  "editor.minimap.enabled": false,
+  "security.promptForLocalFileProtocolHandling": false,
+  "window.newWindowDimensions": "inherit"
 }
