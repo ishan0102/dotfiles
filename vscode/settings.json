@@ -156,5 +156,6 @@
   "terminal.integrated.fontFamily": "monospace",
   "editor.minimap.enabled": false,
   "security.promptForLocalFileProtocolHandling": false,
-  "window.newWindowDimensions": "inherit"
+  "window.newWindowDimensions": "inherit",
+  "github.copilot.editor.enableAutoCompletions": true
 }
