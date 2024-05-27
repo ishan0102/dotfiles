@@ -56,6 +56,7 @@ brew "jpeg", link: true
 brew "jq"
 brew "libssh2"
 brew "libzip"
+brew "llama.cpp"
 brew "protobuf"
 brew "mosh"
 brew "mprocs"
