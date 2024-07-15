@@ -157,5 +157,8 @@
   "editor.minimap.enabled": false,
   "security.promptForLocalFileProtocolHandling": false,
   "window.newWindowDimensions": "inherit",
-  "github.copilot.editor.enableAutoCompletions": true
+  "github.copilot.editor.enableAutoCompletions": true,
+  "editor.lightbulb.enabled": "off",
+  "http.proxySupport": "off",
+  "python.createEnvironment.trigger": "off"
 }

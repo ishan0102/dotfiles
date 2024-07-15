@@ -27,6 +27,7 @@ alias gl="git log --oneline --decorate --graph"
 alias ghr="git reset --hard HEAD"
 alias gsh="git push"
 alias gll="git pull"
+alias gf="git fetch"
 
 # Open applications
 alias chrome="open -a 'google chrome'"
