@@ -4,7 +4,7 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Load the shell dotfiles
-for file in ~/.{bash_prompt,exports,aliases,extras}; do
+for file in ~/.{bash_prompt,exports,extras,aliases}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 
