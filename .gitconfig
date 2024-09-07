@@ -1,10 +1,18 @@
 [user]
 	name = Ishan Shah
-	email = ishan0102@gmail.com
-	signingkey = 0EC3F359F4F98BCC
-[commit]
-	gpgsign = true
-[pull]
-	rebase = false
+	email = ishan0102@utexas.edu
+	signingkey = D13F3585E8A3FCC0
 [core]
 	excludesfile = /Users/ishanshah/.gitignore_global
+    pager = delta
+[delta]
+	line-numbers = true
+	side-by-side = true
+[pull]
+	rebase = false
+[push]
+	autoSetupRemote = true
+[commit]
+	gpgsign = true
+[gpg]
+	program = /opt/homebrew/bin/gpg
