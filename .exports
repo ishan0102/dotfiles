@@ -30,3 +30,10 @@ export GPG_TTY=$(tty)
 
 # Python breakpoints
 export PYTHONBREAKPOINT='ipdb.set_trace'
+
+# Created by `pipx` on 2024-03-16 22:56:40
+export PATH="$PATH:/Users/ishanshah/.local/bin"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
