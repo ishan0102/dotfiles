@@ -11,10 +11,6 @@ done
 # Set up preexec
 source ~/.bash-preexec.sh
 
-# atuin
-# [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
-# eval "$(atuin init bash)"
-
 # Now handle the .functions directory separately
 if [ -d ~/.functions ]; then
     for func in ~/.functions/*; do
@@ -23,30 +19,7 @@ if [ -d ~/.functions ]; then
         fi
     done
 fi
-
 unset file
-
-# Disable mouse acceleration
-defaults write .GlobalPreferences com.apple.mouse.scaling -1
-
-# Node version manager
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/homebrew/Caskroom/miniforge/base/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh" ]; then
-        . "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh"
-    else
-        export PATH="/opt/homebrew/Caskroom/miniforge/base/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 # Enable git branch name completion.
 # curl -L https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ~/.git-completion.bash
@@ -68,12 +41,5 @@ if which brew > /dev/null; then
     [ -s $zpath ] && source $zpath
 fi;
 
-# GitHub Copilot CLI
-eval "$(github-copilot-cli alias -- "$0")"
-
-# bind '"\e[A": history-search-backward'
-# bind '"\e[B": history-search-forward'
+# Disable terminal sounds
 bind 'set bell-style none'
-
-# Created by `pipx` on 2024-03-16 22:56:40
-export PATH="$PATH:/Users/ishanshah/.local/bin"

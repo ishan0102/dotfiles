@@ -10,16 +10,9 @@ export HISTFILESIZE=
 # Omit duplicates and commands beginning with a space
 export HISTCONTROL='ignoreboth'
 
-# Node version manager
-export NVM_DIR="$Home/.nvm"
-
 # Go
 export GOPATH=/Users/$USER/go
 export PATH=$GOPATH/bin:$PATH
-
-# Fix sed errors (https://stackoverflow.com/questions/19242275/re-error-illegal-byte-sequence-on-mac-os-x/19770395#19770395)
-# export LC_CTYPE=C
-# export LANG=C
 
 # Fix xcode error
 export LANG=en_US.UTF-8
@@ -30,9 +23,6 @@ export GPG_TTY=$(tty)
 
 # Python breakpoints
 export PYTHONBREAKPOINT='ipdb.set_trace'
-
-# Created by `pipx` on 2024-03-16 22:56:40
-export PATH="$PATH:/Users/ishanshah/.local/bin"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
