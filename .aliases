@@ -12,6 +12,7 @@ alias activate="source venv/bin/activate"
 alias brd="bun run dev"
 alias nrd="brd"
 alias backupmac="rsync -avz --info=progress2 --stats --exclude .git/ --exclude venv/ --exclude .next/ --exclude __pycache__/ --exclude node_modules/ ~/Documents/ ~/happenstance ~/ishan.coffee $DEVBOX_IP:~/documents/mac-backup"
+alias weather="curl wttr.in"
 
 # Easier navigation: .., ..., ...., .....
 alias ..="cd .."
