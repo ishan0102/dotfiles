@@ -20,8 +20,8 @@ function refresh_dots() {
   cp -R ~/Library/Application\ Support/Code/User/snippets Documents/code/dotfiles/vscode
   cp ~/.vscode/extensions/extensions.json Documents/code/dotfiles/vscode
 
-	# Ghostty
-	cp .config/ghostty/config Documents/code/dotfiles/.config/ghostty
+  # Ghostty
+  cp .config/ghostty/config Documents/code/dotfiles/.config/ghostty
 
   # Go to dotfiles folder
   cd ~/Documents/code/dotfiles
