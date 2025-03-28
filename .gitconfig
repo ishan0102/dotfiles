@@ -5,14 +5,21 @@
 [core]
 	excludesfile = /Users/ishanshah/.gitignore_global
     pager = delta
-[delta]
-	line-numbers = true
-	side-by-side = true
+[init]
+	defaultBranch = main
+[column]
+	ui = auto
 [pull]
 	rebase = false
 [push]
 	autoSetupRemote = true
 [commit]
 	gpgsign = true
+[branch]
+	sort = -committerdate
 [gpg]
 	program = /opt/homebrew/bin/gpg
+
+[delta]
+	line-numbers = true
+	side-by-side = true

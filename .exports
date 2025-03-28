@@ -24,6 +24,13 @@ export GPG_TTY=$(tty)
 # Python breakpoints
 export PYTHONBREAKPOINT='ipdb.set_trace'
 
+# Node
+export BROWSERSLIST_IGNORE_OLD_DATA=1
+
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
+
+# Sentry
+export SENTRY_SUPPRESS_TURBOPACK_WARNING=1
+export SENTRY_SUPPRESS_GLOBAL_ERROR_HANDLER_FILE_WARNING=1

@@ -2,19 +2,17 @@
 
 # Happenstance
 alias hpnlocal="bash ~/happenstance/happenstance/util/quickstart.sh"
-alias hpnsql="cd ~/happenstance/happenstance; activate; python util/ask_sql.py"
-alias hpnpgcli="cd ~/happenstance/happenstance; activate; export HPN_ENV=prod; bash util/hpn-pgcli"
+alias hpnsql="cd ~/happenstance/happenstance; uv run util/ask_sql.py"
+alias hpnpgcli="cd ~/happenstance/happenstance; source .venv/bin/activate; export HPN_ENV=prod; bash util/hpn-pgcli"
 alias hpnstats='open -a "Google Chrome" "https://dashboard-ishan-happenstance-happenstance.vercel.app/"'
-alias ip="source ~/happenstance/happenstance/venv/bin/activate; python ~/happenstance/happenstance/inspect_pickle.py"
+alias ip="source ~/happenstance/happenstance/venv/bin/activate; uv run ~/happenstance/happenstance/inspect_pickle.py"
 
 # Quality of life
 alias ls="ls -1 -haFG --color"
 alias fc="expr \$(ls -1 | wc -l) - 2"
 alias cat="bat"
 alias activate="source venv/bin/activate"
-alias brd="bun run dev"
-alias nrd="brd"
-alias backupmac="rsync -avz --info=progress2 --stats --exclude .git/ --exclude venv/ --exclude .next/ --exclude __pycache__/ --exclude node_modules/ ~/Documents/ ~/happenstance ~/ishan.coffee $DEVBOX_IP:~/documents/mac-backup"
+alias backupmac="rsync -avz --info=progress2 --stats --exclude .git/ --exclude venv/ --exclude .next/ --exclude __pycache__/ --exclude node_modules/ ~/Documents/ ~/happenstance ~/ishan.cafe $DEVBOX_IP:~/documents/mac-backup"
 alias weather="curl wttr.in"
 
 # Easier navigation: .., ..., ...., .....
@@ -39,12 +37,21 @@ alias gf="git fetch"
 # Open applications
 alias chrome="open -a 'google chrome'"
 alias sublime="open -a 'sublime text'"
+alias windsurf="open -a 'windsurf'"
 
-# Code running
+# Python
 alias p="python3.10"
 alias python="python3.10"
 alias python3="python3.10"
 alias pythno="python3.10"
+# Run isort + format on current dir
+alias ruffd="ruff check --fix --select I; ruff format"
+
+# Node
+alias brd="bun run dev"
+alias nrd="bun run dev"
+alias brb="bun run build"
+alias brs="bun run start"
 
 # Tailscale
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
