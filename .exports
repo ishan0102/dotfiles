@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Happenstance
+export HPN_ENV=staging
+
 # Hide the “default interactive shell is now zsh” warning on macOS
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
@@ -34,3 +37,6 @@ export PATH=$BUN_INSTALL/bin:$PATH
 # Sentry
 export SENTRY_SUPPRESS_TURBOPACK_WARNING=1
 export SENTRY_SUPPRESS_GLOBAL_ERROR_HANDLER_FILE_WARNING=1
+
+# tldr
+export TLDR_AUTO_UPDATE_DISABLED=1

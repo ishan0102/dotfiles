@@ -1,10 +1,9 @@
 #!/bin/bash
 
 # Happenstance
-alias hpnlocal="bash ~/happenstance/happenstance/util/quickstart.sh"
-alias hpnsql="cd ~/happenstance/happenstance; uv run util/ask_sql.py"
-alias hpnpgcli="cd ~/happenstance/happenstance; source .venv/bin/activate; export HPN_ENV=prod; bash util/hpn-pgcli"
-alias hpnstats='open -a "Google Chrome" "https://dashboard-ishan-happenstance-happenstance.vercel.app/"'
+alias hlocal="bash ~/happenstance/happenstance/util/quickstart.sh"
+alias hsql="cd ~/happenstance/happenstance; uv run util/ask_sql.py"
+alias hcli="cd ~/happenstance/happenstance; source .venv/bin/activate; bash util/hpn-pgcli"
 alias ip="source ~/happenstance/happenstance/venv/bin/activate; uv run ~/happenstance/happenstance/inspect_pickle.py"
 
 # Quality of life
