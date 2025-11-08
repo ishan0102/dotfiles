@@ -78,6 +78,8 @@ set showmode
 set title
 " Show the (partial) command as it’s being typed
 set showcmd
+" Make Typescript not be painfully slow
+set re=0
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()

@@ -5,9 +5,6 @@ __pycache__/
 # Folder view configuration
 .DS_Store
 
-# VSCode
-.vscode/
-
 # Generated LaTeX files
 *.aux
 *.lof

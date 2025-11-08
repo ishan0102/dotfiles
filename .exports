@@ -40,3 +40,9 @@ export SENTRY_SUPPRESS_GLOBAL_ERROR_HANDLER_FILE_WARNING=1
 
 # tldr
 export TLDR_AUTO_UPDATE_DISABLED=1
+
+# pipx
+export PATH="$PATH:/Users/ishanshah/.local/bin"
+
+# postgresql@16
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"

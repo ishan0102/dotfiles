@@ -8,7 +8,7 @@ font-family = "Berkeley Mono Trial"
 font-size = 16
 
 # Theme
-theme = GruvboxDarkHard
+theme = Gruvbox Dark Hard
 
 # Cursor
 cursor-style-blink = false
@@ -19,3 +19,4 @@ macos-icon = custom-style
 macos-icon-frame = plastic
 macos-icon-ghost-color = 000000
 macos-icon-screen-color = FFFFFF
+keybind = shift+enter=text:\x1b\r

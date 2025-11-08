@@ -4,13 +4,16 @@
 alias hlocal="bash ~/happenstance/happenstance/util/quickstart.sh"
 alias hsql="cd ~/happenstance/happenstance; uv run util/ask_sql.py"
 alias hcli="cd ~/happenstance/happenstance; source .venv/bin/activate; bash util/hpn-pgcli"
-alias ip="source ~/happenstance/happenstance/venv/bin/activate; uv run ~/happenstance/happenstance/inspect_pickle.py"
+alias ip="uv run ~/happenstance/happenstance/inspect_pickle.py"
+
+# rsrch
+alias rsrch="cd ~/Documents/code/websites/rsrch.space/scripts; uv run --python .venv/bin/python main.py"
 
 # Quality of life
 alias ls="ls -1 -haFG --color"
 alias fc="expr \$(ls -1 | wc -l) - 2"
 alias cat="bat"
-alias activate="source venv/bin/activate"
+alias activate="source .venv/bin/activate"
 alias backupmac="rsync -avz --info=progress2 --stats --exclude .git/ --exclude venv/ --exclude .next/ --exclude __pycache__/ --exclude node_modules/ ~/Documents/ ~/happenstance ~/ishan.cafe $DEVBOX_IP:~/documents/mac-backup"
 alias weather="curl wttr.in"
 
@@ -34,9 +37,7 @@ alias gll="git pull"
 alias gf="git fetch"
 
 # Open applications
-alias chrome="open -a 'google chrome'"
 alias sublime="open -a 'sublime text'"
-alias windsurf="open -a 'windsurf'"
 
 # Python
 alias p="python3.10"

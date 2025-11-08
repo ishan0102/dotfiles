@@ -43,6 +43,3 @@ fi;
 
 # Disable terminal sounds
 bind 'set bell-style none'
-
-# Created by `pipx` on 2024-11-04 03:03:00
-export PATH="$PATH:/Users/ishanshah/.local/bin"
