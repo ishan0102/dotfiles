@@ -43,3 +43,5 @@ fi;
 
 # Disable terminal sounds
 bind 'set bell-style none'
+# Added by Antigravity
+export PATH="/Users/ishanshah/.antigravity/antigravity/bin:$PATH"

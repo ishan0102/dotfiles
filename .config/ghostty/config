@@ -11,6 +11,7 @@ font-size = 16
 theme = Gruvbox Dark Hard
 
 # Cursor
+cursor-style = box
 cursor-style-blink = false
 mouse-scroll-multiplier = 2
 
@@ -20,3 +21,6 @@ macos-icon-frame = plastic
 macos-icon-ghost-color = 000000
 macos-icon-screen-color = FFFFFF
 keybind = shift+enter=text:\x1b\r
+
+# Panes
+unfocused-split-opacity = 1.0

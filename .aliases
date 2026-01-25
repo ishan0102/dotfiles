@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Happenstance
-alias hlocal="bash ~/happenstance/happenstance/util/quickstart.sh"
+alias hd="cd ~/happenstance/happenstance; source .venv/bin/activate; HPN_ENV=dev-ishan overmind start"
 alias hsql="cd ~/happenstance/happenstance; uv run util/ask_sql.py"
 alias hcli="cd ~/happenstance/happenstance; source .venv/bin/activate; bash util/hpn-pgcli"
 alias ip="uv run ~/happenstance/happenstance/inspect_pickle.py"
@@ -35,6 +35,7 @@ alias ghr="git reset --hard HEAD"
 alias gsh="git push"
 alias gll="git pull"
 alias gf="git fetch"
+alias grp="git rev-parse --short HEAD | tr -d '\n'"
 
 # Open applications
 alias sublime="open -a 'sublime text'"
@@ -50,6 +51,7 @@ alias ruffd="ruff check --fix --select I; ruff format"
 # Node
 alias brd="bun run dev"
 alias nrd="bun run dev"
+alias rnd="bun run dev"
 alias brb="bun run build"
 alias brs="bun run start"
 
