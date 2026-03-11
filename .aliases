@@ -1,9 +1,17 @@
 #!/bin/bash
 
+# Claude
+alias c="claude"
+
+# Devbox
+alias db="mosh devbox"
+
 # Happenstance
-alias hd="cd ~/happenstance/happenstance; source .venv/bin/activate; HPN_ENV=dev-ishan overmind start"
+alias hd="cd ~/happenstance/happenstance; assume hpn-dev; source .venv/bin/activate; HPN_ENV=dev-ishan OVERMIND_IGNORED_PROCESSES=public_api,uploads_manager,otelcol,chunks_manager overmind start"
+alias hw="cd ~/happenstance/happenstance-web; assume hpn-web-staging && open http://localhost:3000 && bun dev --port 3000"
+alias hdash="cd ~/happenstance/happenstance-dashboard; assume hpn-dev && open http://localhost:3001 && bun dev --port 3001"
 alias hsql="cd ~/happenstance/happenstance; uv run util/ask_sql.py"
-alias hcli="cd ~/happenstance/happenstance; source .venv/bin/activate; bash util/hpn-pgcli"
+alias hcli="cd ~/happenstance/happenstance; assume hpn-dev; source .venv/bin/activate; bash util/hpn-pgcli"
 alias ip="uv run ~/happenstance/happenstance/inspect_pickle.py"
 
 # rsrch
@@ -14,13 +22,16 @@ alias ls="ls -1 -haFG --color"
 alias fc="expr \$(ls -1 | wc -l) - 2"
 alias cat="bat"
 alias activate="source .venv/bin/activate"
-alias backupmac="rsync -avz --info=progress2 --stats --exclude .git/ --exclude venv/ --exclude .next/ --exclude __pycache__/ --exclude node_modules/ ~/Documents/ ~/happenstance ~/ishan.cafe $DEVBOX_IP:~/documents/mac-backup"
+alias backupmac="rsync -avz --info=progress2 --stats --exclude .git/ --exclude venv/ --exclude .next/ --exclude __pycache__/ --exclude node_modules/ ~/Documents/ ~/happenstance  $DEVBOX_IP:~/documents/mac-backup"
 alias weather="curl wttr.in"
 
 # Easier navigation: .., ..., ...., .....
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+
+# Brew
+alias brew="HOMEBREW_NO_AUTO_UPDATE=1 brew"
 
 # Git shortcuts
 alias g="git"
@@ -30,6 +41,9 @@ alias gd="git diff"
 alias gc="git commit -m"
 alias gb="git branch"
 alias gk="git checkout"
+alias gks="git checkout staging"
+alias gkm="git checkout main"
+alias gm="git merge"
 alias gl="git log --oneline --decorate --graph"
 alias ghr="git reset --hard HEAD"
 alias gsh="git push"
@@ -58,3 +72,5 @@ alias brs="bun run start"
 # Tailscale
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
+# Assume (for Granted, better AWS CLI)
+alias assume=". assume"
