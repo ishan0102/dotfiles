@@ -11,6 +11,9 @@ done
 # Set up preexec
 source ~/.bash-preexec.sh
 
+# Set up completions
+source '/Users/ishanshah/.bash_completions/hpn-agent.sh'
+
 # Now handle the .functions directory separately
 if [ -d ~/.functions ]; then
     for func in ~/.functions/*; do
@@ -41,6 +44,8 @@ if which brew > /dev/null; then
     [ -s $zpath ] && source $zpath
 fi;
 
+# fzf — ctrl+R fuzzy history, ctrl+T file picker, alt+C cd picker
+source <(fzf --bash)
+
 # Disable terminal sounds
 bind 'set bell-style none'
-

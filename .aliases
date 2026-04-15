@@ -8,10 +8,11 @@ alias db="mosh devbox"
 
 # Happenstance
 alias hd="cd ~/happenstance/happenstance; assume hpn-dev; source .venv/bin/activate; HPN_ENV=dev-ishan OVERMIND_IGNORED_PROCESSES=public_api,uploads_manager,otelcol,chunks_manager overmind start"
-alias hw="cd ~/happenstance/happenstance-web; assume hpn-web-staging && open http://localhost:3000 && bun dev --port 3000"
-alias hdash="cd ~/happenstance/happenstance-dashboard; assume hpn-dev && open http://localhost:3001 && bun dev --port 3001"
+alias hw="cd ~/happenstance/happenstance-web; assume hpn-web-staging && bun dev --port 3000"
+alias hdash="cd ~/happenstance/happenstance-dashboard; assume hpn-dev && bun dev --port 3001"
 alias hsql="cd ~/happenstance/happenstance; uv run util/ask_sql.py"
 alias hcli="cd ~/happenstance/happenstance; assume hpn-dev; source .venv/bin/activate; bash util/hpn-pgcli"
+alias ha="hpn-agent"
 alias ip="uv run ~/happenstance/happenstance/inspect_pickle.py"
 
 # rsrch

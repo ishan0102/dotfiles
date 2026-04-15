@@ -47,3 +47,9 @@ export PATH="$PATH:/Users/ishanshah/.local/bin"
 
 # postgresql@16
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+
+# Docker
+export DOCKER_CLI_HINTS=false
+
+# Browser-Use
+export PATH="/Users/ishanshah/.browser-use-env/bin:/Users/ishanshah/.local/bin:$PATH"
