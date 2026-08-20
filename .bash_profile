@@ -3,49 +3,47 @@
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Load the shell dotfiles
+# Load shell dotfiles
 for file in ~/.{bash_prompt,exports,extras,aliases}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 
 # Set up preexec
-source ~/.bash-preexec.sh
+[ -f ~/.bash-preexec.sh ] && source ~/.bash-preexec.sh
 
 # Set up completions
-source '/Users/ishanshah/.bash_completions/hpn-agent.sh'
+[ -f ~/.bash_completions/hpn-agent.sh ] && source ~/.bash_completions/hpn-agent.sh
 
-# Now handle the .functions directory separately
+# Load functions
 if [ -d ~/.functions ]; then
     for func in ~/.functions/*; do
-        if [ -r "$func" ] && [ -f "$func" ]; then
-            source "$func"
-        fi
+        [ -r "$func" ] && [ -f "$func" ] && source "$func"
     done
 fi
 unset file
 
-# Enable git branch name completion.
-# curl -L https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ~/.git-completion.bash
+# Enable git branch name completion
 if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
+    source ~/.git-completion.bash
 fi
+
 # Autocomplete git aliases
-__git_complete gk git_checkout
-__git_complete gb git_branch
-__git_complete gd git_diff
-__git_complete g git
+type __git_complete &>/dev/null && {
+    __git_complete gk git_checkout
+    __git_complete gb git_branch
+    __git_complete gd git_diff
+    __git_complete g git
+}
 
 # Append to the history file, don't overwrite it
 shopt -s histappend
 
 # z beats cd most of the time. `brew install z`
-if which brew > /dev/null; then
+if command -v brew >/dev/null 2>&1; then
     zpath="$(brew --prefix)/etc/profile.d/z.sh"
-    [ -s $zpath ] && source $zpath
-fi;
+    [ -s "$zpath" ] && source "$zpath"
+fi
 
-# fzf — ctrl+R fuzzy history, ctrl+T file picker, alt+C cd picker
-source <(fzf --bash)
-
-# Disable terminal sounds
-bind 'set bell-style none'
+# Load interactive bash config
+[ -f ~/.bashrc ] && source ~/.bashrc
+export PATH="/Users/ishanshah/.revyl/bin:$PATH"

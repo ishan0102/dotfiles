@@ -24,3 +24,4 @@ __pycache__/
 *.synctex.gz
 *.synctex.gz(busy)
 *.pdfsync
+**/.claude/settings.local.json

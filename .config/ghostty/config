@@ -24,6 +24,3 @@ keybind = shift+enter=text:\x1b\r
 
 # Panes
 unfocused-split-opacity = 1.0
-
-# Undo
-undo-timeout = 30
