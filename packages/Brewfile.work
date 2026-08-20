@@ -1,0 +1,17 @@
+# Optional work tools. Apply only on a work Mac after project requirements are
+# confirmed.
+
+tap "stripe/stripe-cli"
+tap "supabase/tap"
+
+brew "cloudflared"
+brew "doctl"
+brew "flyctl"
+brew "granted"
+brew "mprocs"
+brew "opentofu"
+brew "overmind"
+brew "postgresql@16"
+brew "redis"
+brew "stripe/stripe-cli/stripe"
+brew "supabase/tap/supabase"

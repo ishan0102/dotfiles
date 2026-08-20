@@ -1,0 +1,46 @@
+# Applications found on 2026-08-20. Confirm licenses and accounts before
+# installation. This list includes App Store and manual installs.
+AppCleaner
+ChatGPT
+Claude
+Claude Code URL Handler
+CleanShot X
+Counter-Strike 2
+Cursor
+Discord
+DisplayBuddy
+Docker
+GPG Keychain
+Ghostty
+Google Chrome
+Granola
+Happenstance
+Ice
+Klack
+Linear
+Minecraft
+Notion
+Notion Calendar
+Obsidian
+Portal 2
+Raycast
+Rectangle
+Safari
+Screen Studio
+Serato DJ Lite
+Slack
+Spotify
+Stats
+Steam
+Sublime Text
+Tailscale
+TestFlight
+Timing
+Visual Studio Code
+Vivid
+Wispr Flow
+Xcode
+Zed
+iMovie
+pgAdmin 4
+zoom.us

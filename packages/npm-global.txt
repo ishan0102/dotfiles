@@ -1,0 +1,14 @@
+# Global npm packages found on 2026-08-20. Prefer project-local tools when
+# possible. Review each package before installation.
+@githubnext/github-copilot-cli
+@openai/codex
+create-next-app
+localtunnel
+macrocosm
+macrocosm-terminal
+n
+npm
+npm-check-updates
+typescript
+typescript-language-server
+vercel

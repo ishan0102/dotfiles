@@ -1,0 +1,4 @@
+# uv tools found on 2026-08-20. This is an audit list. Check for a current
+# approved version before installation.
+hpn-agent @ git+https://github.com/happenstance-ai/hpn-agent-infra.git@v0.4.7
+ruff==0.9.10
