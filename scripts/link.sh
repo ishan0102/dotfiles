@@ -56,8 +56,6 @@ link_set() {
   action=$1
 
   "$action" "$dotfiles_root/shell/zsh/.zshrc" "$HOME/.zshrc"
-  "$action" "$dotfiles_root/shell/bash/.bashrc" "$HOME/.bashrc"
-  "$action" "$dotfiles_root/shell/bash/.bash_profile" "$HOME/.bash_profile"
   "$action" "$dotfiles_root/git/.gitconfig" "$HOME/.gitconfig"
   "$action" "$dotfiles_root/git/.gitignore_global" "$HOME/.gitignore_global"
   "$action" "$dotfiles_root/terminal/.inputrc" "$HOME/.inputrc"
@@ -70,6 +68,9 @@ link_set() {
   if [ "$profile" = mac ]; then
     "$action" "$dotfiles_root/shell/bash/.hushlogin" "$HOME/.hushlogin"
     "$action" "$dotfiles_root/terminal/ghostty/config" "$HOME/.config/ghostty/config"
+  else
+    "$action" "$dotfiles_root/shell/bash/.bashrc" "$HOME/.bashrc"
+    "$action" "$dotfiles_root/shell/bash/.bash_profile" "$HOME/.bash_profile"
   fi
 }
 
@@ -81,5 +82,7 @@ mkdir -p "$HOME/.vim/backups" "$HOME/.vim/swaps" "$HOME/.vim/undo"
 
 printf '\nCreate private local files from the examples only after review:\n'
 printf '  %s\n' "$dotfiles_root/shell/zsh/.zshrc.local.example"
-printf '  %s\n' "$dotfiles_root/shell/bash/.bashrc.local.example"
+if [ "$profile" = remote ]; then
+  printf '  %s\n' "$dotfiles_root/shell/bash/.bashrc.local.example"
+fi
 printf '  %s\n' "$dotfiles_root/git/.gitconfig.local.example"

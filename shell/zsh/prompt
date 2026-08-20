@@ -26,11 +26,11 @@ dotfiles_update_prompt() {
   vcs_info
   dotfiles_env_prompt=''
 
-  if [[ "$PWD" == *happenstance* ]]; then
-    case "${HPN_ENV:-unknown}" in
+  if [[ "$PWD" == *happenstance* && -n "${HPN_ENV:-}" ]]; then
+    case "$HPN_ENV" in
       prod) dotfiles_env_prompt=" %{${dotfiles_color_prod}%}(prod)%{${dotfiles_color_reset}%}" ;;
       staging) dotfiles_env_prompt=" %{${dotfiles_color_host}%}(staging)%{${dotfiles_color_reset}%}" ;;
-      *) dotfiles_env_prompt=" %{${dotfiles_color_path}%}(${HPN_ENV:-unknown})%{${dotfiles_color_reset}%}" ;;
+      *) dotfiles_env_prompt=" %{${dotfiles_color_path}%}(${HPN_ENV})%{${dotfiles_color_reset}%}" ;;
     esac
   fi
 }
