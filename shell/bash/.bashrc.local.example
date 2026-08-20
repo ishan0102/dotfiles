@@ -1,0 +1,7 @@
+# Copy this file to ~/.bashrc.local. Do not add the real file to Git.
+# Bash detects mac on macOS and remote on other systems. Set a profile here
+# only when that detection is wrong.
+# export DOTFILES_PROFILE=remote
+
+# Set this value to 1 only on a work Mac.
+export DOTFILES_LOAD_WORK=0

@@ -1,0 +1,71 @@
+# Fast, host-aware prompt with zsh-native Git integration.
+
+autoload -Uz add-zsh-hook vcs_info
+zmodload zsh/datetime
+setopt PROMPT_SUBST
+
+# Store real terminal control characters in variables. Putting textual `\e`
+# sequences directly in PROMPT causes them to be printed by interactive zsh.
+typeset -gr dotfiles_color_user=$'\e[38;5;9m'
+typeset -gr dotfiles_color_host=$'\e[38;5;172m'
+typeset -gr dotfiles_color_path=$'\e[38;5;190m'
+typeset -gr dotfiles_color_git=$'\e[38;5;141m'
+typeset -gr dotfiles_color_prod=$'\e[38;5;196m'
+typeset -gr dotfiles_color_reset=$'\e[39m'
+
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr '%F{yellow}+%f'
+zstyle ':vcs_info:git:*' unstagedstr '%F{red}*%f'
+zstyle ':vcs_info:git:*' formats " %F{white}on%f %{${dotfiles_color_git}%}%b%{${dotfiles_color_reset}%}%c%u"
+zstyle ':vcs_info:git:*' actionformats " %F{white}on%f %{${dotfiles_color_git}%}%b|%a%{${dotfiles_color_reset}%}%c%u"
+
+typeset -g dotfiles_env_prompt=''
+typeset -gF dotfiles_command_started=0
+
+dotfiles_update_prompt() {
+  vcs_info
+  dotfiles_env_prompt=''
+
+  if [[ "$PWD" == *happenstance* ]]; then
+    case "${HPN_ENV:-unknown}" in
+      prod) dotfiles_env_prompt=" %{${dotfiles_color_prod}%}(prod)%{${dotfiles_color_reset}%}" ;;
+      staging) dotfiles_env_prompt=" %{${dotfiles_color_host}%}(staging)%{${dotfiles_color_reset}%}" ;;
+      *) dotfiles_env_prompt=" %{${dotfiles_color_path}%}(${HPN_ENV:-unknown})%{${dotfiles_color_reset}%}" ;;
+    esac
+  fi
+}
+
+dotfiles_update_title() {
+  [[ -t 1 ]] || return
+
+  local tab_title
+  if [[ "$PWD" == / ]]; then
+    tab_title='/'
+  else
+    tab_title="${PWD:h:t}/${PWD:t}"
+  fi
+
+  # Match the old prompt: full directory in the window title and the final two
+  # directory components in the tab/surface title.
+  printf '\e]2;%s\a\e]1;%s\a' "$PWD" "$tab_title"
+}
+
+dotfiles_start_timer() {
+  dotfiles_command_started="$EPOCHREALTIME"
+}
+
+dotfiles_finish_timer() {
+  (( dotfiles_command_started > 0 )) || return
+
+  local -F elapsed=$(( EPOCHREALTIME - dotfiles_command_started ))
+  printf 'Execution time: %.2fs\n' "$elapsed"
+  dotfiles_command_started=0
+}
+
+add-zsh-hook preexec dotfiles_start_timer
+add-zsh-hook precmd dotfiles_finish_timer
+add-zsh-hook precmd dotfiles_update_prompt
+add-zsh-hook precmd dotfiles_update_title
+
+PROMPT='%B%{$dotfiles_color_user%}%n%{$dotfiles_color_reset%}%b %F{white}at%f %{$dotfiles_color_host%}%m%{$dotfiles_color_reset%} %F{white}in%f %{$dotfiles_color_path%}%~%{$dotfiles_color_reset%}${vcs_info_msg_0_}${dotfiles_env_prompt}
+$ '

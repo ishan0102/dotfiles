@@ -1,0 +1,48 @@
+# shellcheck shell=bash
+
+# Add an existing directory to PATH. Do not add the same directory two times.
+dotfiles_prepend_path() {
+    [ -d "$1" ] || return
+    case ":$PATH:" in
+        *":$1:"*) ;;
+        *) PATH="$1:$PATH" ;;
+    esac
+}
+
+export GOPATH="${GOPATH:-$HOME/go}"
+export BUN_INSTALL="${BUN_INSTALL:-$HOME/.bun}"
+
+# The last valid item in this list gets the highest priority.
+for dotfiles_user_bin in \
+    "$HOME/bin" \
+    "$GOPATH/bin" \
+    "$BUN_INSTALL/bin" \
+    /opt/homebrew/opt/postgresql@16/bin \
+    "$HOME/.local/bin" \
+    "$HOME/.browser-use-env/bin" \
+    "$HOME/.revyl/bin"; do
+    dotfiles_prepend_path "$dotfiles_user_bin"
+done
+unset dotfiles_user_bin
+unset -f dotfiles_prepend_path
+export PATH
+
+export HISTSIZE=100000
+export HISTFILESIZE=200000
+export HISTCONTROL=ignoreboth
+export PYTHONBREAKPOINT="${PYTHONBREAKPOINT:-ipdb.set_trace}"
+export BROWSERSLIST_IGNORE_OLD_DATA=1
+export SENTRY_SUPPRESS_TURBOPACK_WARNING=1
+export SENTRY_SUPPRESS_GLOBAL_ERROR_HANDLER_FILE_WARNING=1
+export TLDR_AUTO_UPDATE_DISABLED=1
+export DOCKER_CLI_HINTS=false
+
+if [ "$(uname -s)" = Darwin ]; then
+    export LANG=en_US.UTF-8
+    export LC_ALL=en_US.UTF-8
+fi
+
+if [ -t 0 ]; then
+    GPG_TTY=$(tty)
+    export GPG_TTY
+fi

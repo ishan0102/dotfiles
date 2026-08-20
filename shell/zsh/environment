@@ -1,0 +1,87 @@
+# Settings shared by macOS and remote zsh sessions.
+
+# Initialize Homebrew when it is available but not already on PATH. Support the
+# standard Apple Silicon, Intel macOS, and Linuxbrew installation locations.
+if (( ! $+commands[brew] )); then
+  for brew_bin in \
+    /opt/homebrew/bin/brew \
+    /usr/local/bin/brew \
+    /home/linuxbrew/.linuxbrew/bin/brew; do
+    if [[ -x "$brew_bin" ]]; then
+      eval "$("$brew_bin" shellenv)"
+      break
+    fi
+  done
+  unset brew_bin
+fi
+
+# Add installed user tools in a predictable order and discard duplicate PATH
+# entries. Missing directories are skipped on remote machines.
+export GOPATH="${GOPATH:-$HOME/go}"
+export BUN_INSTALL="${BUN_INSTALL:-$HOME/.bun}"
+
+typeset -U path PATH
+user_paths=()
+for user_bin in \
+  "$HOME/.revyl/bin" \
+  "$HOME/.browser-use-env/bin" \
+  "$HOME/.local/bin" \
+  /opt/homebrew/opt/postgresql@16/bin \
+  "$BUN_INSTALL/bin" \
+  "$GOPATH/bin" \
+  "$HOME/bin"; do
+  [[ -d "$user_bin" ]] && user_paths+=("$user_bin")
+done
+path=("${user_paths[@]}" "${path[@]}")
+unset user_bin user_paths
+export PATH
+
+# z tracks frequently visited directories and provides `z <partial-path>`.
+for z_script in \
+  /opt/homebrew/etc/profile.d/z.sh \
+  /usr/local/etc/profile.d/z.sh \
+  /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh; do
+  if [[ -r "$z_script" ]]; then
+    source "$z_script"
+    break
+  fi
+done
+unset z_script
+
+export PYTHONBREAKPOINT="${PYTHONBREAKPOINT:-ipdb.set_trace}"
+export BROWSERSLIST_IGNORE_OLD_DATA=1
+export SENTRY_SUPPRESS_TURBOPACK_WARNING=1
+export SENTRY_SUPPRESS_GLOBAL_ERROR_HANDLER_FILE_WARNING=1
+export TLDR_AUTO_UPDATE_DISABLED=1
+export DOCKER_CLI_HINTS=false
+
+# Do not force a macOS locale on Linux hosts where it may not exist.
+if [[ "$OSTYPE" == darwin* ]]; then
+  export LANG=en_US.UTF-8
+  export LC_ALL=en_US.UTF-8
+fi
+
+[[ -n "$TTY" ]] && export GPG_TTY="$TTY"
+
+# Keep history and the completion cache outside the top level of $HOME.
+zsh_state_dir="${XDG_STATE_HOME:-$HOME/.local/state}/zsh"
+mkdir -p "$zsh_state_dir"
+HISTFILE="$zsh_state_dir/history"
+HISTSIZE=200000
+SAVEHIST=200000
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt HIST_VERIFY
+unset zsh_state_dir
+
+zsh_cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+mkdir -p "$zsh_cache_dir"
+autoload -Uz compinit
+compinit -d "$zsh_cache_dir/zcompdump"
+zstyle ':completion:*' menu select
+unset zsh_cache_dir
+
+bindkey -e
+setopt NO_BEEP

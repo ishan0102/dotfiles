@@ -1,0 +1,6 @@
+# Opt-in aliases for a work Mac.
+
+alias ha='hpn-agent'
+
+# Granted requires evaluation in the current shell.
+alias assume='. assume'

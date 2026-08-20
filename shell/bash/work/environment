@@ -1,0 +1,5 @@
+# shellcheck shell=bash
+
+# These defaults are valid only on a work machine. Put secrets in ~/.extras.
+export HPN_ENV="${HPN_ENV:-staging}"
+export AWS_PROFILE="${AWS_PROFILE:-hpn-default}"

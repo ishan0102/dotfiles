@@ -1,0 +1,78 @@
+# Opt-in functions for a work Mac.
+
+dotfiles_work_cd() {
+  local directory="$1"
+  if [[ ! -d "$directory" ]]; then
+    print -u2 "Directory not found: $directory"
+    return 1
+  fi
+  builtin cd "$directory"
+}
+
+dotfiles_assume() {
+  if (( ! $+commands[assume] )); then
+    print -u2 'Granted assume is not installed'
+    return 127
+  fi
+  source "$commands[assume]" "$@"
+}
+
+db() {
+  mosh devbox "$@"
+}
+
+hd() {
+  dotfiles_work_cd "$HOME/happenstance/happenstance" || return
+  dotfiles_assume hpn-dev || return
+  [[ -r .venv/bin/activate ]] || {
+    print -u2 'Virtual environment not found: .venv'
+    return 1
+  }
+  source .venv/bin/activate
+  HPN_ENV=dev-ishan \
+    OVERMIND_IGNORED_PROCESSES=public_api,uploads_manager,otelcol,chunks_manager \
+    overmind start
+}
+
+hw() {
+  dotfiles_work_cd "$HOME/happenstance/happenstance-web" || return
+  dotfiles_assume hpn-web-staging || return
+  bun dev --port 3000
+}
+
+hdash() {
+  dotfiles_work_cd "$HOME/happenstance/happenstance-dashboard" || return
+  dotfiles_assume hpn-dev || return
+  bun dev --port 3001
+}
+
+hsql() {
+  dotfiles_work_cd "$HOME/happenstance/happenstance" || return
+  uv run util/ask_sql.py "$@"
+}
+
+hcli() {
+  dotfiles_work_cd "$HOME/happenstance/happenstance" || return
+  dotfiles_assume hpn-dev || return
+  [[ -r .venv/bin/activate ]] || {
+    print -u2 'Virtual environment not found: .venv'
+    return 1
+  }
+  source .venv/bin/activate
+  bash util/hpn-pgcli "$@"
+}
+
+ip() {
+  uv run "$HOME/happenstance/happenstance/inspect_pickle.py" "$@"
+}
+
+tigh() {
+  tig \
+    --remotes='*staging*' \
+    --remotes='*main*' \
+    --remotes='*ishan*' \
+    --branches='*staging*' \
+    --branches='*main*' \
+    --branches='*ishan*' \
+    "$@"
+}

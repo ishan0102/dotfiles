@@ -1,0 +1,8 @@
+# Opt-in environment settings for a work Mac.
+
+export HPN_ENV="${HPN_ENV:-staging}"
+export AWS_PROFILE="${AWS_PROFILE:-hpn-default}"
+
+# This private file can contain temporary machine values. Prefer a password
+# manager on new machines.
+[[ -r "$HOME/.extras" ]] && source "$HOME/.extras"

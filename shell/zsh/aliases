@@ -1,0 +1,71 @@
+# Small aliases shared by macOS and remote zsh sessions.
+
+# Navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# Prefer readable directory listings on both BSD and GNU systems.
+if [[ "$OSTYPE" == darwin* ]]; then
+  alias ls='ls -1 -haFG'
+else
+  alias ls='ls -1 -haF --color=auto'
+fi
+
+# Use bat when the installed command name is known.
+if (( $+commands[bat] )); then
+  alias cat='bat'
+elif (( $+commands[batcat] )); then
+  alias cat='batcat'
+fi
+
+alias activate='source .venv/bin/activate'
+alias weather='curl wttr.in'
+
+# Keep the convenient short form without pinning every Python command to an old
+# Homebrew minor version.
+(( $+commands[python3] )) && alias p='python3'
+
+# Git
+alias g='git'
+alias gs='git status'
+alias ga='git add .'
+alias gd='git diff'
+alias gc='git commit -m'
+alias gb='git branch'
+alias gk='git checkout'
+alias gks='git checkout staging'
+alias gkm='git checkout main'
+alias gm='git merge'
+alias gl='git log --oneline --decorate --graph'
+alias ghr='git reset --hard HEAD'
+alias gsh='git push'
+alias gll='git pull'
+alias gf='git fetch'
+alias grp='git rev-parse --short HEAD'
+
+# Project tools
+alias c='claude'
+alias ruffd='ruff check --fix --select I && ruff format'
+alias brd='bun run dev'
+alias nrd='bun run dev'
+alias rnd='bun run dev'
+alias brb='bun run build'
+alias brs='bun run start'
+
+if [[ "$OSTYPE" == darwin* ]]; then
+  alias sublime="open -a 'Sublime Text'"
+  alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
+fi
+
+# Teach zsh completion about the Git aliases after compinit has loaded.
+compdef g=git
+compdef gs=git
+compdef ga=git
+compdef gd=git
+compdef gc=git
+compdef gb=git
+compdef gk=git
+compdef gm=git
+compdef gl=git
+compdef gf=git
