@@ -1,0 +1,17 @@
+# Copy this file to ~/.gitconfig.local. Confirm the identity on each machine.
+# Do not copy a signing key or authentication data from another machine.
+
+[user]
+	name = REPLACE WITH YOUR NAME
+	email = REPLACE WITH YOUR EMAIL
+[commit]
+	gpgsign = false
+[core]
+	pager = delta
+[delta]
+	line-numbers = true
+	side-by-side = true
+
+# Configure signing only after the local signing key is available. Run
+# `gh auth setup-git` after GitHub CLI authentication. That command selects the
+# correct credential helper for the machine.

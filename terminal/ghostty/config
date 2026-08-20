@@ -15,6 +15,9 @@ cursor-style = block
 cursor-style-blink = false
 mouse-scroll-multiplier = 2
 
+# Keep shell integration from replacing the block cursor with a prompt bar.
+shell-integration-features = no-cursor
+
 # Icon
 macos-icon = custom-style
 macos-icon-frame = plastic

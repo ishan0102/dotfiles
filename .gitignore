@@ -5,5 +5,11 @@ __pycache__/
 # Folder view configuration
 .DS_Store
 
+# Machine-private shell configuration
+.extras
+.gitconfig.local
+.bashrc.local
+.zshrc.local
+
 # VSCode
 .vscode/
