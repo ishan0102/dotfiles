@@ -26,9 +26,10 @@ Repository layout:
 - `macos/`: reviewed macOS preferences
 - `scripts/`: safe linking and read-only health checks
 
-The Mac profile links only `~/.zshrc`; Bash configuration remains in the
-repository for Bash-only remote machines. Each shell entry file loads the other
-files from its directory. Those internal files use clear names such as
+The main home links are `~/.zshrc` and `~/.bashrc`. zsh is the primary Mac
+shell, while Bash remains ready as a fallback and for remote machines. Each
+shell entry file loads the other files from its directory. Those internal files
+use clear names such as
 `environment`, `aliases`, `functions`, and `prompt`. They are not hidden because
 they are repository modules, not home dotfiles. Helper links such as
 `~/.aliases` and `~/.functions` are not necessary.

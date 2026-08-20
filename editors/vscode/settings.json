@@ -102,6 +102,13 @@
   "redhat.telemetry.enabled": false,
   "git.openRepositoryInParentFolders": "always",
   "terminal.integrated.fontFamily": "monospace",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.profiles.osx": {
+    "zsh": {
+      "path": "/bin/zsh",
+      "args": ["-l"],
+    },
+  },
   "editor.minimap.enabled": false,
   "window.newWindowDimensions": "inherit",
   "editor.lightbulb.enabled": "off",

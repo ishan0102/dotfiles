@@ -94,6 +94,8 @@ check_command() {
 
 check_common_links() {
   check_link "$dotfiles_root/shell/zsh/.zshrc" "$HOME/.zshrc"
+  check_link "$dotfiles_root/shell/bash/.bashrc" "$HOME/.bashrc"
+  check_link "$dotfiles_root/shell/bash/.bash_profile" "$HOME/.bash_profile"
   check_link "$dotfiles_root/git/.gitconfig" "$HOME/.gitconfig"
   check_link "$dotfiles_root/git/.gitignore_global" "$HOME/.gitignore_global"
   check_link "$dotfiles_root/terminal/.inputrc" "$HOME/.inputrc"
@@ -110,14 +112,11 @@ check_common_links
 if [ "$profile" = mac ]; then
   check_link "$dotfiles_root/shell/bash/.hushlogin" "$HOME/.hushlogin"
   check_link "$dotfiles_root/terminal/ghostty/config" "$HOME/.config/ghostty/config"
-else
-  check_link "$dotfiles_root/shell/bash/.bashrc" "$HOME/.bashrc"
-  check_link "$dotfiles_root/shell/bash/.bash_profile" "$HOME/.bash_profile"
 fi
 
 printf '\nPrivate file modes\n'
 check_mode "$HOME/.zshrc.local" 600
-[ "$profile" = remote ] && check_mode "$HOME/.bashrc.local" 600
+check_mode "$HOME/.bashrc.local" 600
 check_mode "$HOME/.gitconfig.local" 600
 check_mode "$HOME/.local/state/zsh/history" 600
 [ -d "$HOME/.aws" ] && check_mode "$HOME/.aws" 700

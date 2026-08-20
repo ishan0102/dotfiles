@@ -1,6 +1,6 @@
 # shellcheck shell=bash
 
-# Small aliases for Bash fallback sessions.
+# Small aliases shared by macOS and remote Bash sessions.
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'

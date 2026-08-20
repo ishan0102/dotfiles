@@ -74,6 +74,17 @@ setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_REDUCE_BLANKS
 setopt HIST_VERIFY
+
+# Apple's zsh 5.9 can crash in readhistfile on abnormally large records.
+# Reject oversized entries before they reach the persistent history file.
+autoload -Uz add-zsh-hook
+dotfiles_history_guard() {
+  emulate -L zsh
+  (( ${#1} <= 16384 ))
+}
+add-zsh-hook -d zshaddhistory dotfiles_history_guard 2>/dev/null
+add-zsh-hook zshaddhistory dotfiles_history_guard
+
 unset zsh_state_dir
 
 zsh_cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"

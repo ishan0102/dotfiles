@@ -99,7 +99,7 @@ cp shell/zsh/.zshrc.local.example ~/.zshrc.local
 chmod 600 ~/.zshrc.local
 ```
 
-On a Bash-only remote machine, use:
+For the Bash fallback, use:
 
 ```sh
 cp shell/bash/.bashrc.local.example ~/.bashrc.local
