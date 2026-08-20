@@ -1,0 +1,2 @@
+0 * * * * /bin/sh "$HOME/Documents/code/dotfiles/jobs/rsrch.sh"
+0 * * * * /bin/sh "$HOME/Documents/code/dotfiles/jobs/engblogs.sh"
