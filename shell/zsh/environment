@@ -92,6 +92,7 @@ mkdir -p "$zsh_cache_dir"
 autoload -Uz compinit
 compinit -d "$zsh_cache_dir/zcompdump"
 zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 unset zsh_cache_dir
 
 bindkey -e
