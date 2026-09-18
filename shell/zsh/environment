@@ -98,4 +98,10 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 unset zsh_cache_dir
 
 bindkey -e
+# Search history using the typed prefix, including arguments.
+# Support both normal and application-mode arrow keys.
+bindkey '^[[A' history-beginning-search-backward
+bindkey '^[[B' history-beginning-search-forward
+bindkey '^[OA' history-beginning-search-backward
+bindkey '^[OB' history-beginning-search-forward
 setopt NO_BEEP
